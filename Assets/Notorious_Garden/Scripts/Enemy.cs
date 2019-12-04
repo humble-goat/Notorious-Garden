@@ -92,7 +92,7 @@ public class Enemy : MonoBehaviour
             if (choose * Player.instance.population % 2 == 0){
                 subclass = "Agressive";
                 // Damage inherit lethal factor
-                damage = Player.instance.lethal_factor;
+                damage = Player.instance.lethality;
                 // Senses inherit insticts
                 senses = Player.instance.insticts;
                 // Health inherit single_health
@@ -107,7 +107,7 @@ public class Enemy : MonoBehaviour
             else {
                 subclass = "Passive";
                 // Damage inherit lethal factor
-                damage = Player.instance.lethal_factor;
+                damage = Player.instance.lethality;
                 // Senses inherit insticts
                 senses = Player.instance.insticts;
                 // Health inherit single_health

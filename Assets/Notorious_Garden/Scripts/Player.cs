@@ -10,10 +10,9 @@ public class Player : MonoBehaviour
     public GameObject super_points;
     public static Player instance;
     public int population;
-    public double lethality = 0f;
+    public float lethality = 0.000001f;
     public double stealth = 100f;
     public double viability = 100f;
-    public double lethal_factor = 0.0f;
     public double insticts = 0.0f;
     public double single_health;
     public double lifespawn;
@@ -42,6 +41,7 @@ public class Player : MonoBehaviour
     }
     void Start()
     {
+
         timer = Time.time;
         instance = this;
         
@@ -73,10 +73,10 @@ public class Player : MonoBehaviour
             // return to main menu
         }
         // reveal factors
-        stealth -= (lethal_factor + updateCount * population) / stealth;
+        stealth -= ((lethality * population) + updateCount) / stealth;
         
         // lethal factors
-        lethality += population * lethal_factor;
+        
     
 
     }
